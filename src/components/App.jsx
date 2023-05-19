@@ -48,7 +48,7 @@ export const App = () => {
         />
       </Section>
       <Section title="Statistics">
-        {!countTotalFeedback ? (
+        {!countTotalFeedback() ? (
           <Notification message="There is no feedback" />
         ) : (
           <Statistics
