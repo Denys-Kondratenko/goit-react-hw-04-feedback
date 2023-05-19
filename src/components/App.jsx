@@ -39,6 +39,8 @@ export const App = () => {
     return Math.round((good / countTotalFeedback()) * 100 || 0);
   };
 
+  const total = countTotalFeedback();
+
   return (
     <Layout>
       <Section title="Please leave feedback">
@@ -48,7 +50,7 @@ export const App = () => {
         />
       </Section>
       <Section title="Statistics">
-        {!countTotalFeedback() ? (
+        {!total ? (
           <Notification message="There is no feedback" />
         ) : (
           <Statistics
@@ -58,7 +60,7 @@ export const App = () => {
             <OtherStatistics
               totalTitle={'total'}
               percentageTitle={'positive feedback'}
-              total={countTotalFeedback()}
+              total={total}
               positivePercentage={countPositiveFeedbackPercentage()}
             />
           </Statistics>
